@@ -1,6 +1,14 @@
 import { createContext, useState, ReactNode } from 'react';
 
-export const ChallengesContext = createContext({});
+interface ChallengesContextData {
+  level: number;
+  currentExperience: number;
+  challengesCompleted: number;
+  levelUp(): void;
+  startNewChallenge(): void;
+}
+
+export const ChallengesContext = createContext({} as ChallengesContextData);
 
 interface ChallengesProviderProps {
   children: ReactNode
@@ -15,8 +23,20 @@ export function ChallengesProvider({ children }: ChallengesProviderProps) {
     setLevel(level + 1);
   }
 
+  function startNewChallenge() {
+    console.log('New challenge');
+  }
+
   return (
-    <ChallengesContext.Provider value={{ level, levelUp, currentExperience, challengesCompleted }}>
+    <ChallengesContext.Provider
+      value={{
+        level,
+        levelUp,
+        currentExperience,
+        challengesCompleted,
+        startNewChallenge
+      }}
+    >
       {children}
     </ChallengesContext.Provider>
   )
