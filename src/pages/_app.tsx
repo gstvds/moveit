@@ -7,8 +7,8 @@ function MyApp({ Component, pageProps }) {
   return (
     <ThemeProvider>
       <ChallengesProvider>
-        <GlobalStyle />
-        <Component {...pageProps} />
+          <GlobalStyle />
+          <Component {...pageProps} />
       </ChallengesProvider>
     </ThemeProvider>
   )
