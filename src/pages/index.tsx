@@ -6,18 +6,18 @@ import { ExperienceBar } from '../components/ExperienceBar';
 import { Profile } from '../components/Profile';
 import { ChallengeBox } from '../components/ChallengeBox';
 
-import styles from '../styles/pages/Home.module.css';
+import { Container, Section } from '../styles/pages/Home';
 
 export default function Home() {
   return (
-    <div className={styles.container}>
+    <Container>
       <Head>
         <title>Início | move.it</title>
       </Head>
 
       <ExperienceBar />
 
-      <section>
+      <Section>
         <div>
           <Profile />
           <CompletedChallenges />
@@ -26,7 +26,7 @@ export default function Home() {
         <div>
           <ChallengeBox />
         </div>
-      </section>
-    </div>
+      </Section>
+    </Container>
   );
 }
